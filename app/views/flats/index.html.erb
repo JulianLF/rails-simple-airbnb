@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>All our Flats (<%= @flats.length %>) <%= @title %></h1>
+  <ul class="row">
+    <% @flats.each do |flat| %>
+      <li class="card col-4">
+        <div class="border-bottom w-100">
+          <img src="<%= flat.image %>" alt="Flat preview" class="img-thumbnail">
+          <h2><%= flat.name %></h2>
+          <p><%= flat.address %></p>
+          <div class="">
+            <span><i class="fas fa-user-friends"></i></span>
+            <span><%= flat.number_of_guests %></span>
+            <span><i class="fas fa-euro-sign"></i></span>
+            <span><%= flat.price_per_night %></span>
+          </div>
+        </div>
+        <div>
+          <span><%= link_to  "More info", flat_path(flat.id) %></span>
+          <span><%= link_to  "Edit", edit_flat_path(flat.id) %></span>
+          <span><%= link_to  "Remove", flat_path(flat.id), method:'DELETE' %></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

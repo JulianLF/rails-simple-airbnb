@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for flat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :image %>
+    <%= f.label :number_of_guests, "Guests" %>
+    <%= f.number_field :number_of_guests %>
+    <%= f.label :price_per_night, "Price" %>
+    <%= f.number_field :price_per_night %>
+    <%= f.submit %>
+  <% end %>
+</div>
